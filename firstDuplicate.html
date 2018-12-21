@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Challenge: <em>First Duplicat (this challenge is off codesignal, not codewars)</em></h2>
+    
+    <h3>Description</h3>
+    <p>
+        Given an array a that contains only numbers in the range from 1 to a.length, find the first duplicate number for which the second occurrence has the minimal index. In other words, if there are more than 1 duplicated numbers, return the number for which the second occurrence has a smaller index than the second occurrence of the other number does. If there are no such elements, return -1.
+            
+            
+    </p>
+    
+</body>
+<script>
+
+
+
+
+  function findDup(a){
+  var numbers = a.split(' ');
+
+  const arraySort = numbers.sort()
+
+  const result = [];
+    for(var i = 0; i < arraySort.length -1; i++){
+      if(arraySort[i +1] == arraySort[i]){
+        result.push(arraySort[i]);
+      }
+    }
+  let firstI = [];
+    var firstIndex = numbers.map(function(num, i) {
+        result.forEach(function(dup){
+          if(num == dup){
+            firstI.push(i);
+          } 
+        })
+    })
+    let firstDup = numbers[firstI[0]]
+    if (typeof firstDup === 'undefined'){
+      firstDup = -1
+    }
+    return firstDup;
+            
+            
+    
+  }
+
+
+  // function findDup(){
+  // var a =[2, 4, 3, 5, 1]
+
+  // const arraySort = a.slice().sort()
+
+  // const result = [];
+  //   for(var i = 0; i < arraySort.length -1; i++){
+  //     if(arraySort[i +1] == arraySort[i]){
+  //       result.push(arraySort[i]);
+  //     }
+  //   }
+  // let firstI = [];
+  //   var firstIndex = a.map(function(num, i) {
+  //       result.forEach(function(dup){
+  //         if(num == dup){
+  //           firstI.push(i);
+  //         } 
+  //       })
+  //   })
+  //   let firstDup = a[firstI[0]]
+  //   if (typeof firstDup === 'undefined'){
+  //     firstDup = -1
+  //   }
+  //   return firstDup;
+            
+            
+    
+  // }
+
+
+
+  // function findDup(){
+  //   //backtracking the index so that we can compare with +1
+  //   for(var i = 0; i < arraySort.length -1; i++ ){
+  //     if(arraySort[i + 1] == arraySort[i]){
+  //       result.push(arraySort[i]);
+  //       result.forEach(function(num){
+  //         if (num === arraySort.indexOf(num)){
+  //          console.log (Math.min(arraySort.indexOf(num)));
+  //         return num;
+  //       } else{
+  //         return -1;
+  //       }
+  //   });
+
+
+
+
+  // }
+
+
+
+//     function iqTest(numbers){
+//   const evenNum =[];
+//   const oddNum =[];
+//   const numbersArray = numbers.split(' ');
+//   numbersArray.forEach(function(num){
+//     if(num % 2 == 0){
+//       evenNum.push(num);  
+//     } else {
+//       oddNum.push(num);
+//     }
+//   });
+
+//     if(oddNum.length == 1){
+//       var oddOutcome = oddNum[0];
+//       console.log(numbersArray.indexOf(oddOutcome) + 1);
+//       return numbersArray.indexOf(oddOutcome) + 1;
+
+      
+//     } else {
+//       var evenOutcome = evenNum[0];
+//       console.log(numbersArray.indexOf(evenOutcome) + 1);
+//       return numbersArray.indexOf(evenOutcome) + 1;
+//     }
+
+
+
+// }
+
+// iqTest('2 7 9 11');
+    
+</script>
+</html>
