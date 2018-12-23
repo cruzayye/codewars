@@ -20,7 +20,7 @@
 <script>
 
 
-var a = [8, 2, 3, 5, 2, 3, 4,];
+var a = [0, 1, 3, 5, 1, 3, 4,];
 
   function findDup(a){
   var numbers = a;
@@ -29,19 +29,17 @@ var a = [8, 2, 3, 5, 2, 3, 4,];
 
   const result = [];
   console.log(result);
-    for(var i = 0; i < arraySort.length-1; i++){
+    for(var i = 0; i < arraySort.length; i++){
       if(arraySort[i +1] == arraySort[i]){
         result.push(arraySort[i]);
       }
     }
   var firstI = [];
-    var firstIndex = numbers.filter(function(num, i) {
+    var firstIndex = numbers.map(function(num, i) {
         result.forEach(function(dup){
           if(num == dup){
             firstI.push(i);
-            console.log(numbers.indexOf[i]);
-            // firstI.push(numbers.indexOf(i));
-            // console.l(numbers.indexOf(dup));  
+            
           } 
         })
     })
